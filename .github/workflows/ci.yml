@@ -18,10 +18,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: hxlnt/action-build-eleventy@master
-        with:
-          path: --input=$GITHUB_WORKSPACE/src --output=$GITHUB_WORKSPACE/_site --config=$GITHUB_WORKSPACE/src/.eleventy.js
-
       - name: Set outputs
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
@@ -41,7 +37,7 @@ jobs:
 
       - uses: hxlnt/action-build-eleventy@master
         with:
-          path: $GITHUB_WORKSPACE/src
+          path: --input=$GITHUB_WORKSPACE/src --output=$GITHUB_WORKSPACE/_site --config=$GITHUB_WORKSPACE/src/.eleventy.js
 
       - name: Build and push
         id: docker_build

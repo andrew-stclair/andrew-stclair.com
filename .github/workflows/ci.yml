@@ -35,7 +35,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: hxlnt/action-build-eleventy@master
+      - name: Build 11ty
+        uses: hxlnt/action-build-eleventy@master
         with:
           path: --input=$GITHUB_WORKSPACE/src --output=_site --config=$GITHUB_WORKSPACE/src/.eleventy.js
 

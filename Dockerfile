@@ -1,3 +1,3 @@
 FROM nginx
-COPY ["/home/runner/work/website/website/_site", "/usr/share/nginx/html"]
+COPY ["/github/workspace/_site", "/usr/share/nginx/html"]
 EXPOSE 80

@@ -36,7 +36,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build 11ty
-        uses: node:buster-slim
         run: |
           npm install --global @11ty/eleventy --unsafe-perm
           npx @11ty/eleventy --input=$GITHUB_WORKSPACE/src --output=$GITHUB_WORKSPACE/_site --config=$GITHUB_WORKSPACE/src/.eleventy.js

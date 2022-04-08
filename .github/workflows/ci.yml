@@ -20,7 +20,7 @@ jobs:
       
       - uses: hxlnt/action-build-eleventy@master
         with:
-          path: $GITHUB_WORKSPACE/src
+          path: --input=$GITHUB_WORKSPACE/src --output=$GITHUB_WORKSPACE/_site --config=$GITHUB_WORKSPACE/src/.eleventy.js
           
       - name: Set outputs
         id: vars

@@ -37,7 +37,7 @@ jobs:
 
       - uses: hxlnt/action-build-eleventy@master
         with:
-          path: --input=$GITHUB_WORKSPACE/src --output=$GITHUB_WORKSPACE/_site --config=$GITHUB_WORKSPACE/src/.eleventy.js
+          path: --input=$GITHUB_WORKSPACE/src --output=_site --config=$GITHUB_WORKSPACE/src/.eleventy.js
 
       - name: Build and push
         id: docker_build

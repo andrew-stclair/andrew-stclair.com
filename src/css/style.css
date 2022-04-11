@@ -245,13 +245,48 @@ main {
 }
 
 html {
-	background-image: linear-gradient(420deg, #000000 0%, #bb6400 100%);
+	background-image: linear-gradient(90deg, #1100ff, #6f00ff, #1100ff);
+	background-size: 400% 100%;
 	color: #fff;
 	font: 400 100% soleil, sans-serif;
 	font-variant-ligatures: common-ligatures;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
+
+	animation: animateBg 60s infinite linear;
+	-moz-animation: animateBg 60s infinite linear;
+	-webkit-animation: animateBg 60s infinite linear;
+}
+
+@keyframes animateBg {
+	0% {
+		background-position: -200% 0;
+	}
+
+	100% {
+		background-position: 200% 0;
+	}
+}
+
+@-moz-keyframes animateBg {
+	0% {
+		background-position: -200% 0;
+	}
+
+	100% {
+		background-position: 200% 0;
+	}
+}
+
+@-webkit-keyframes animateBg {
+	0% {
+		background-position: -200% 0;
+	}
+
+	100% {
+		background-position: 200% 0;
+	}
 }
 
 main {

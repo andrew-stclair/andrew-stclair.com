@@ -55,3 +55,10 @@ jobs:
             ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
             ghcr.io/${{ github.repository }}:latest
           pull: true
+
+      - name: deploy to cluster
+        uses: ghostzero/kubectl@v1
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        with:
+          args: set image --record deployment/nginx container=${{ github.repository }}:${{ steps.vars.outputs.sha_short }}

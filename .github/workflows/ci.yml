@@ -61,4 +61,4 @@ jobs:
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          args: set image --record deployment/nginx nginx=${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
+          args: set image --record deployment/nginx nginx=ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}

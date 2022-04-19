@@ -245,7 +245,7 @@ main {
 }
 
 html {
-	background-image: linear-gradient(70deg, #4400ff 0%, #4400ff 10%, #8800ff 50%, #4400ff 90%, #4400ff 100%);
+	background-image: linear-gradient(90deg,#ff2aa5 0%,#8d29ff 40%,#433dff 50%,#8d29ff 60%,#ff2aa5 100%);
 	background-size: 400% 100%;
 	color: #fff;
 	font: 400 100% soleil, sans-serif;

@@ -8,16 +8,23 @@ links:
 - [Credly, https://www.credly.com/users/andrew-st-clair.538052b8]
 ---
 <!DOCTYPE html>
-<html>
+<html lang="en-AU">
 
 <head>
 	<title>{{ name }}</title>
 
-	<meta name="description" content="{{ job }}">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="og:title" content="{{ name }}">
+	<meta name="twitter:title" content="{{ name }}">
+	<meta name="description" content="The website of {{ name }}{% for title in titles %}, {{ title }}{% endfor %}">
+	<meta name="og:description" content="The website of {{ name }}{% for title in titles %}, {{ title }}{% endfor %}">
+	<meta name="keywords" content="{{ name }}{% for title in titles %}, {{ title }}{% endfor %}">
+	<meta name="author" content="{{ name }}">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
 	<script src="https://use.typekit.net/tea2qzw.js"></script>
 	<script>try { Typekit.load({ async: true }); } catch (e) { }</script>
 </head>
@@ -43,9 +50,9 @@ links:
 						</g>
 					</svg>
 				</li>
-				{% for link in links %}
-				<li><a href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a></li>
-				{% endfor %}
+				{% for link in links %}<li>
+					<a href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a>
+				</li>{% endfor %}
 			</ul>
 		</footer>
 	</main>

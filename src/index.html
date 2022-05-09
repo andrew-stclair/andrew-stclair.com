@@ -1,5 +1,4 @@
 ---
-name: Andrew St Clair
 titles:
 - Associate Cloud Engineer
 links:
@@ -11,16 +10,16 @@ links:
 <html lang="en-AU">
 
 <head>
-	<title>{{ name }}</title>
+	<title>{{ site.name }}</title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<meta name="og:title" content="{{ name }}">
-	<meta name="twitter:title" content="{{ name }}">
-	<meta name="description" content="The website of {{ name }}{% for title in titles %}, {{ title }}{% endfor %}">
-	<meta name="og:description" content="The website of {{ name }}{% for title in titles %}, {{ title }}{% endfor %}">
-	<meta name="keywords" content="{{ name }}{% for title in titles %}, {{ title }}{% endfor %}">
-	<meta name="author" content="{{ name }}">
+	<meta name="og:title" content="{{ site.name }}">
+	<meta name="twitter:title" content="{{ site.name }}">
+	<meta name="description" content="The website of {{ site.name }}{% for title in titles %}, {{ title }}{% endfor %}">
+	<meta name="og:description" content="The website of {{ site.name }}{% for title in titles %}, {{ title }}{% endfor %}">
+	<meta name="keywords" content="{{ site.name }}{% for title in titles %}, {{ title }}{% endfor %}">
+	<meta name="author" content="{{ site.name }}">
 
 	<link href="css/style.css" rel="stylesheet">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -32,7 +31,7 @@ links:
 <body>
 	<main>
 		<header>
-			<h1>{{ name }}</h1>
+			<h1>{{ site.name }}</h1>
 			{% for title in titles %}
 			<h2>{{ title }}</h2>
 			{% endfor %}

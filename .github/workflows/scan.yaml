@@ -5,13 +5,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  scan:
     runs-on: ubuntu-18.04
     steps:          
       - name: Vulnerability Scan
         uses: azure/container-scan@v0
         with:
-          image-name: ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
+          image-name: ghcr.io/${{ github.repository }}:latest
           severity-threshold: LOW
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}

@@ -52,14 +52,6 @@ jobs:
             ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
             ghcr.io/${{ github.repository }}:latest
           pull: true
-          
-      - name: Vulnerability scan
-        uses: azure/container-scan@v0
-        with:
-          image-name: ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
-          severity-threshold: LOW
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: deploy to cluster
         uses: ghostzero/kubectl@v1

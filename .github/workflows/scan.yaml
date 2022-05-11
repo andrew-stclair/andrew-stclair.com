@@ -1,12 +1,5 @@
 name: Vulnerability Scan
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - "*.md"
-      - "docs/**"
-      - "examples/**"
   schedule:
     - cron: '0 0 * * 0'
   workflow_dispatch:

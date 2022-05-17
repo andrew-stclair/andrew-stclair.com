@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@11ty/eleventy-navigation": "^0.3.3",
     "eleventy": "^1.0.6"
   }
 }

@@ -74,7 +74,7 @@ ul li:not(:first-of-type):before {
     }
 
 	ul li:first-child {
-		display: none;
+		display: flex;
 	}
 }
 
@@ -100,7 +100,7 @@ ul li:not(:first-of-type):before {
 	}
 
 	ul li:first-child {
-		display: none;
+		display: flex;
 	}
 }
 
@@ -127,7 +127,7 @@ ul li:not(:first-of-type):before {
 	}
 
 	ul li:first-child {
-		display: none;
+		display: flex;
 	}
 }
 
@@ -154,6 +154,6 @@ ul li:not(:first-of-type):before {
 	}
 
 	ul li:first-child {
-		display: none;
+		display: flex;
 	}
 }

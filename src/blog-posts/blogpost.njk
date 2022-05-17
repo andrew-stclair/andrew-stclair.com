@@ -1,12 +1,12 @@
 ---
-title: Post title
-subtitle: Post subtitle
 layout: blogpost.liquid
-permalink: /blog/blogpost.html
+permalink: "/blog/{{ page.date.toISOString() | slugify }}-{{ eleventyNavigation.title | slugify }}/"
+tags: posts
 eleventyNavigation:
   key: blogpost
   parent: blog
   title: Blog post
+  subtitle: Blog post subtitle
   excerpt: Blog post excerpt
 ---
 <h2>Hi, I'm Andrew St Clair</h2>

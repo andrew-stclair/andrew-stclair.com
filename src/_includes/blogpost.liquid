@@ -28,8 +28,8 @@ navToHtmlOptions:
 <body>
 	<main>
 		<nav>{{ collections.all | eleventyNavigationBreadcrumb: eleventyNavigation.key, navToHtmlOptions | eleventyNavigationToHtml }}</nav>
-		<h1>{{ title }}</1>
-		<h5>{{ subtitle }}</5>
+		<h1>{{ eleventyNavigation.title }}</1>
+		<h5>{{ eleventyNavigation.subtitle }}</5>
 		{{ content }}
 		<footer />
 	</main>

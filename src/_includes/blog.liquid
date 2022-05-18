@@ -27,9 +27,9 @@ navToHtmlOptions:
 
 <body>
 	<main>
-		<nav>{{ collections.posts | eleventyNavigationBreadcrumb: eleventyNavigation.key, navToHtmlOptions | eleventyNavigationToHtml }}
+		<nav>{{ collections.blog | eleventyNavigationBreadcrumb: eleventyNavigation.key, navToHtmlOptions | eleventyNavigationToHtml }}
 		<h1>{{ eleventyNavigation.title }} | {{ site.name }}</h1>
-		{{ collections.all | eleventyNavigation: "blog", navToHtmlOptions | eleventyNavigationToHtml }}</nav>
+		{{ collections.blog | eleventyNavigation: eleventyNavigation.key, navToHtmlOptions | eleventyNavigationToHtml }}</nav>
 		<footer />
 	</main>
 </body>

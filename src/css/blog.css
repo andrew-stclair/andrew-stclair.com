@@ -16,21 +16,50 @@ p {
     padding-top: 0.5em;
     padding-bottom: 1em;
 	font-weight: normal;
+	line-height: 1.3em;
 }
 
 main > p:first-of-type {
 	font-weight: bold;
 }
 
-nav > ul > li {
+nav ul li {
 	font-size: 1em;
 	width: fit-content;
 	padding-right: 5px;
 }
 
-ul li:not(:first-of-type):before {
+nav ul li:not(:first-of-type):before {
     content: '>';
     margin: 0 0.2em;
+}
+
+ul li div p {
+	font-size: 0.8em;
+	font-weight: normal;
+}
+
+main > ul > li {
+	display: block;
+	float: left;
+    clear: left;
+	width: 600px;
+	height: fit-content;
+}
+
+div {
+	width: 100%;
+	border-radius: 12px;
+	background: rgba(192, 192, 192, 0);
+	padding: 12px;
+	margin: 0px;
+	margin-bottom: 5px;
+	height: fit-content;
+	display: block;
+}
+
+div:hover {
+	background: rgba(192, 192, 192, 0.6);
 }
 
 @media screen and (min-width: 1024px) {

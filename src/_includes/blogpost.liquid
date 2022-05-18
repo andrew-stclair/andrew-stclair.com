@@ -29,7 +29,7 @@ navToHtmlOptions:
 	<main>
 		<nav>{{ collections.blog | eleventyNavigationBreadcrumb: eleventyNavigation.key, navToHtmlOptions | eleventyNavigationToHtml }}</nav>
 		<h1>{{ eleventyNavigation.title }}</1>
-		<h5>{{ eleventyNavigation.subtitle }}</5>
+		<h5>{{ eleventyNavigation.subtitle }} | {{ page.date | readableDateTime }}</5>
 		{{ content }}
 		<footer />
 	</main>

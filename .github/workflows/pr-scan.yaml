@@ -42,6 +42,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           image: ghcr.io/${{ github.repository }}:latest-mr
+          sarif: true
           args: --file=Dockerfile
 
       - name: Upload result to GitHub Code Scanning

@@ -1,4 +1,4 @@
-name: Pull Request Vulnerability Scan
+name: PR Scan
 on:
   pull_request:
     branches:
@@ -32,13 +32,18 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/armhf
           push: false
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/${{ github.repository }}:latest-mr
           pull: true
 
-      - name: Vulnerability Scan
-        uses: azure/container-scan@v0
+      - name: Run Snyk to check Docker image for vulnerabilities
+        uses: snyk/actions/docker@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          image-name: ghcr.io/${{ github.repository }}:latest
-          severity-threshold: LOW
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          image: ghcr.io/${{ github.repository }}:latest-mr
+          args: --file=Dockerfile
+
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: snyk.sarif

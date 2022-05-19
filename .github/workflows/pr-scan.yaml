@@ -1,4 +1,4 @@
-name: Pull Request Vulnerability Scan
+name: PR Scan
 on:
   pull_request:
     branches:

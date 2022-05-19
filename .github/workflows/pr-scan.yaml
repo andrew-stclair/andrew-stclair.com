@@ -32,13 +32,14 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/armhf
           push: false
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/${{ github.repository }}:latest-mr
           pull: true
 
-      - name: Vulnerability Scan
-        uses: azure/container-scan@v0
-        with:
-          image-name: ghcr.io/${{ github.repository }}:latest
-          severity-threshold: LOW
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run Snyk to check Docker image for vulnerabilities
+      uses: snyk/actions/docker@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        image: ghcr.io/${{ github.repository }}:latest-mr

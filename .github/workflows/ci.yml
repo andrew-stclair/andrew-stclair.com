@@ -39,6 +39,7 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           npm install
+          npm fund
           npx @11ty/eleventy --input=src --output=build --config=src/.eleventy.js
 
       - name: Build and push

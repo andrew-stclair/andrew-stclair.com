@@ -24,6 +24,10 @@ jobs:
           npm install --global @11ty/eleventy --unsafe-perm
           cd $GITHUB_WORKSPACE
           npx @11ty/eleventy --input=src --output=build --config=src/.eleventy.js
+          
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Build
         id: docker_build
@@ -32,7 +36,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/armhf
           push: false
-          tags: ghcr.io/${{ github.repository }}:latest-mr
+          tags: ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
           pull: true
 
       - name: Run Snyk to check Docker image for vulnerabilities
@@ -40,7 +44,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          image: ghcr.io/${{ github.repository }}:latest-mr
+          image: ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
           args: --file=Dockerfile
 
       - name: Upload result to GitHub Code Scanning

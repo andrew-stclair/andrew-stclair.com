@@ -37,8 +37,8 @@ jobs:
 
       - name: Build 11ty
         run: |
-          npm install --global @11ty/eleventy --unsafe-perm
           cd $GITHUB_WORKSPACE
+          npm install
           npx @11ty/eleventy --input=src --output=build --config=src/.eleventy.js
 
       - name: Build and push

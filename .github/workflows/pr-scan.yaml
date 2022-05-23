@@ -13,12 +13,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1.2.0
-
       - name: Build 11ty
         run: |
           npm install --global @11ty/eleventy --unsafe-perm
@@ -30,15 +24,7 @@ jobs:
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Build
-        id: docker_build
-        uses: docker/build-push-action@v2.10.0
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm64,linux/armhf
-          push: false
-          tags: ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
-          pull: true
-          cache-to: type=inline
+        run: docker build -t ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }} .
 
       - name: Run Snyk to check Docker image for vulnerabilities
         uses: snyk/actions/docker@master

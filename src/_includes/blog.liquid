@@ -31,8 +31,8 @@ navToHtmlOptions:
 		<h1>{{ eleventyNavigation.title }} | {{ site.name }}</h1>
 		{% assign navPages = collections.blog | eleventyNavigation: eleventyNavigation.key %}
 		<ul>
-		{%- for entry in navPages %}
-  			<li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+		{%- for entry in navPages reversed %}
+  			<li{% if entry.url == page.url %} class="blog-nav"{% endif %}>
     			<div>
 					<a href="{{ entry.url | url }}">
 						<h2>{{ entry.title }}</h2>

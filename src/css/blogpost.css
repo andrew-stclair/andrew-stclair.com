@@ -43,8 +43,14 @@ main > ul > li {
 	display: block;
 	float: left;
     clear: left;
-	width: 600px;
+	width: fit-content;
 	height: fit-content;
+	font-size: 1em;
+}
+
+main > ul > li::before {
+	content: '>';
+	margin-right: 0.5em;
 }
 
 div {
@@ -131,10 +137,6 @@ div:hover {
 	ul li:first-child {
 		display: flex;
 	}
-
-	main > ul > li {
-		width: 460px;
-	}
 }
 
 @media screen and (min-width: 360px) and (max-width: 566px) {
@@ -162,10 +164,6 @@ div:hover {
 	ul li:first-child {
 		display: flex;
 	}
-
-	main > ul > li {
-		width: 300px;
-	}
 }
 
 @media screen and (min-width: 0px) and (max-width: 359px) {
@@ -192,9 +190,5 @@ div:hover {
 
 	ul li:first-child {
 		display: flex;
-	}
-
-	main > ul > li {
-		width: 250px;
 	}
 }

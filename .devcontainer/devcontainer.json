@@ -32,7 +32,7 @@
 	},
 
 	// Post-create commands to run on the container.
-	"postCreateCommand": "bash -i -c 'nvm install --lts'",
+	"postCreateCommand": "bash -i -c 'nvm install'",
 
 	// ports to expose on the host.
 	"forwardPorts": [8081]

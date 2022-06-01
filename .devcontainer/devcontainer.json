@@ -31,9 +31,6 @@
 		"git-lfs": "latest"
 	},
 
-	// Post-create commands to run on the container.
-	"postCreateCommand": "bash -i -c 'nvm install'",
-
-	// ports to expose on the host.
-	"forwardPorts": [8081]
+	// Post create command
+	"postCreateCommand": "npm install; npm fund"
 }

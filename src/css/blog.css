@@ -47,13 +47,18 @@ main > ul > li {
 	height: fit-content;
 }
 
+h1 {
+	margin-bottom: 1.5em;
+}
+
 div {
 	width: 100%;
 	border-radius: 12px;
 	background: rgba(192, 192, 192, 0);
 	padding: 12px;
 	margin: 0px;
-	margin-bottom: 5px;
+	margin-top:0.6em;
+	margin-bottom: 0.6em;
 	height: fit-content;
 	display: block;
 }

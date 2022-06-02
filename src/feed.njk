@@ -27,7 +27,7 @@
     <email>{{ metadata.author.email }}</email>
   </author>{%- for post in collections.posts %}{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <entry>
-    <title>{{ post.data.title }}</title>
+    <title>{{ post.data.metadata.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>

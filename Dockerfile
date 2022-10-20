@@ -1,4 +1,4 @@
-FROM nginx:1.22.0-alpine
+FROM nginx:1.22.1-alpine
 RUN apk update; apk upgrade --no-cache
 COPY ["build", "/usr/share/nginx/html"]
 EXPOSE 80

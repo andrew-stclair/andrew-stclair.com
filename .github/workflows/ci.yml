@@ -43,6 +43,12 @@ jobs:
           npm fund
           npx @11ty/eleventy --input=src --output=build --config=src/.eleventy.js
 
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: website build
+          path: build/*
+
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v3.2.0

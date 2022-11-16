@@ -3,5 +3,3 @@
 Build and push my website from source
 
 Builds my website using [11ty](https://11ty.dev/)
-
-Then puts it in a docker container for hosting with kubernetes (also updates my kubernetes cluster so changes go live automatically)

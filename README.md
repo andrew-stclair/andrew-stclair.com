@@ -1,4 +1,4 @@
-# Website [![Build and Publish](https://github.com/andrew-stclair/website/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/andrew-stclair/website/actions/workflows/ci.yml)
+# Website [![Build and Publish](https://github.com/andrew-stclair/website/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/andrew-stclair/website/actions/workflows/static.yml)
 
 Build and push my website from source
 

@@ -15,7 +15,7 @@ navToHtmlOptions:
 	<meta name="twitter:title" content="{{ site.name }}">
 	<meta name="description" content="{{ eleventyNavigation.excerpt }}">
 	<meta name="og:description" content="{{ eleventyNavigation.excerpt }}">
-	<meta name="keywords" content="{{ site.name }}{% for keyword in site.keywords %}, {{ keyword }}{% endfor %}, {{ eleventyNavigation.excerpt }}">
+	<meta name="keywords" content="{{ site.name }}{% for keyword in site.keywords %}, {{ keyword }}{% endfor %}{% for keyword in keywords %}, {{ keyword }}{% endfor %}{% for tag in tags %}, {{ tag }}{% endfor %}, {{ eleventyNavigation.excerpt }}">
 	<meta name="author" content="{{ site.name }}">
 
 	<link href="/css/style.css" rel="stylesheet">

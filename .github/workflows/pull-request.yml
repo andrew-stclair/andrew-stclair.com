@@ -31,5 +31,5 @@ jobs:
       - name: Comment on PR
         uses: allthatjazzleo/actions-pull-request-add-comment@master
         with:
-          message: '${{ steps.vars.outputs.site_size }}'
+          message: '${{ steps.vars.outputs.site_size }} size'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

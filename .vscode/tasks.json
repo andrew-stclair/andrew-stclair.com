@@ -17,11 +17,13 @@
             "label": "11ty: Serve",
             "type": "shell",
             "command": "npx @11ty/eleventy --input=src --output=build --config=src/.eleventy.js --serve --port=8081",
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            }
+            "problemMatcher": []
+        },
+        {
+            "label": "Sign security.txt",
+            "type": "shell",
+            "command": "gpg --sign -o src/.well-known/security.txt.sig src/.well-known/security.txt",
+            "problemMatcher": []
         }
     ]
 }

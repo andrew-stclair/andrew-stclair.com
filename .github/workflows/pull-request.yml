@@ -1,0 +1,35 @@
+name: Build and Publish
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - id: string
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{ github.repository }}
+      
+      - name: Build 11ty
+        run: |
+          cd $GITHUB_WORKSPACE
+          npm install
+          npm fund
+          npx @11ty/eleventy --input=src --output=build --config=src/.eleventy.js
+          
+      - name: Set outputs
+        id: vars
+        run: |
+          echo "::set-output name=site_size::$(du -sh build)"
+
+      - name: Comment on PR
+        uses: allthatjazzleo/actions-pull-request-add-comment@master
+        with:
+          message: '${{ steps.vars.outputs.site_size }}'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

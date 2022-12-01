@@ -43,7 +43,8 @@
 					</svg>
 				</li>
 				{% for link in links %}<li>
-					<a href="{{ link[1] }}" target="{{ link[2] }}" rel="noopener noreferrer">{{ link[0] }}</a>
+					{% assign checkArray = link[1] | split:'http' %}
+					<a href="{{ link[1] }}" {% if checkArray[0] == blank %}target="_blank"{% endif %} rel="noopener noreferrer">{{ link[0] }}</a>
 				</li>{% endfor %}
 			</ul>
 		</footer>

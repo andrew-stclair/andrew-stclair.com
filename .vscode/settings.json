@@ -1,7 +1,7 @@
 {
     "git.autorefresh": true,
     "git.branchProtection": [
-        "master"
+        "main"
     ],
     "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
     "git.mergeEditor": true,

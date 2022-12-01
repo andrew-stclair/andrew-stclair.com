@@ -1,0 +1,14 @@
+{
+    "git.autorefresh": true,
+    "git.branchProtection": [
+        "master"
+    ],
+    "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
+    "git.mergeEditor": true,
+    "git.pullBeforeCheckout": true,
+    "git.autofetch": true,
+    "remoteHub.commitDirectlyWarning": "off",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.postCommitCommand": "sync"
+}

@@ -1,0 +1,37 @@
+---
+layout: blogpost.liquid
+tags: ["blog", "posts"]
+keywords: ["MongoDB", "Challenge"]
+date: 2022-12-01T16:35:31+11:00
+eleventyNavigation:
+  key: mdbc011222
+  parent: blog
+  title: MongoDB's Challenge
+  subtitle: How i completed MongoDB's Challenge
+  excerpt: How i completed MongoDB's Challenge
+---
+<h2>The Challenge</h2>
+<p>At work today, MongoDB had a presentation on securing their product, Atlas.
+  At the end of this presentation they issued us a challenge, the presentation itself contains a "payload".
+  The challenge for us is to extract this payload and retrieve the credentials within.</p>
+<h2>The Challenge Pt. 2</h2>
+<p>This file was shared through Sharepoint.
+  An issue with using sharepoint is if you open the file using Powerpoint online and save a copy,
+  this is essentially the same as "Save As", meaning the file is saved as it exists in powerpoint's memory.
+  This is an issue because the payload exists in a file that's not a part of the powerpoint file's spec,
+  and as such, it gets removed. Instead of opening and saving a copy, you need to download a copy.
+  This can be dome by clicking the 3 dots next to the file in your search for file browser in sharepoint.</p>
+<h2>The Solution</h2>
+<p>All office documents are actually zip files in disguise, so the first thing i tried, was to unzip the document.
+  This revealed a whole list of .xml files, my next challenge was to locate any files that seem out of place.
+  I spent about 30 minutes looking through the files and found a file called `_rels_ver.xml`.
+  This file did not look too out of place on it's own but the contents was a bit of a red flag for me.
+  There were two elements that looked to contain base64 encoded data, one was a short string, the other was a large blob.</p>
+<p>Decoding the short string revealed a cheeky message, "very close!", but decoding the long one revealed only garbled data.
+  The output from the big blob of base64 encoded text looked like binary data, but it did not start with 'ELF',
+  a key indicator that the data is an executable for linux. So i tried a few decompression methods instead as
+  They can look similar when represented by text. Turns out it was a gzip compressed string of text containing the payload we were looking for!
+  Just for clarification though, this payload was dummy data that was created for the purpose of this challenge, it's not real data.</p>
+<h2>Wrap up</h2>
+<p>It was a fun challenge. Thanks to <a href="https://cyberchef.org" target="_blank">CyberChef</a> for the assistance decoding that large blob of text,
+  while it would not be imposible to decode in a terminal, it was quite simple to drag and drop various modules in and out to test.</p>

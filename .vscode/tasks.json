@@ -22,7 +22,7 @@
         {
             "label": "Sign security.txt",
             "type": "shell",
-            "command": "gpg --sign -o src/.well-known/security.txt.sig src/.well-known/security.txt",
+            "command": "rm -rf src/.well-known/security.txt.sig; gpg --detach-sig --sign --output src/.well-known/security.txt.sig src/.well-known/security.txt; gpg --verify src/.well-known/security.txt.sig src/.well-known/security.txt",
             "problemMatcher": []
         }
     ]

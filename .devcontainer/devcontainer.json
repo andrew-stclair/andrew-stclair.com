@@ -10,19 +10,23 @@
 		"args": { "VARIANT": "16-bullseye" }
 	},
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": {},
-
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"dbaeumer.vscode-eslint",
-		"ms-vscode.vscode-github-issue-notebooks",
-		"ecmel.vscode-html-css",
-		"oderwat.indent-rainbow",
-		"DavidAnson.vscode-markdownlint",
-		"ronnidc.nunjucks",
-		"Yseop.vscode-yseopml"
-	],
+	"customizations": {
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"ms-vscode.vscode-github-issue-notebooks",
+				"ecmel.vscode-html-css",
+				"oderwat.indent-rainbow",
+				"DavidAnson.vscode-markdownlint",
+				"ronnidc.nunjucks",
+				"Yseop.vscode-yseopml",
+				"eamodio.gitlens"
+			],
+			// Set *default* container specific settings.json values on container create.
+			"settings": {}
+		}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],

@@ -21,7 +21,8 @@
 				"DavidAnson.vscode-markdownlint",
 				"ronnidc.nunjucks",
 				"Yseop.vscode-yseopml",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"ms-python.python"
 			],
 			// Set *default* container specific settings.json values on container create.
 			"settings": {}

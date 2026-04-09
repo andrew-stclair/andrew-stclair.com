@@ -1,9 +1,9 @@
-const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
 
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import pluginRss from "@11ty/eleventy-plugin-rss";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/.well-known");
     eleventyConfig.addPassthroughCopy("src/robots.txt");

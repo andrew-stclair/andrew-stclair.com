@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xhtml="https://www.w3.org/1999/xhtml"
+  xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9
+  https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+  https://www.w3.org/1999/xhtml
+  https://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">
+    <url>
+      <loc>https://andrew-stclair.com/blog/2022/11/17/welcome-to-my-blog/</loc>
+      <lastmod>2022-11-17T07:37:30.000Z</lastmod>
+      <changefreq>monthly</changefreq>
+    </url><url>
+      <loc>https://andrew-stclair.com/blog/2022/12/01/mongodbs-challenge/</loc>
+      <lastmod>2022-12-01T05:35:31.000Z</lastmod>
+      <changefreq>monthly</changefreq>
+    </url><url>
+      <loc>https://andrew-stclair.com/blog/</loc>
+      <lastmod>2026-08-10T06:01:58.351Z</lastmod>
+      <changefreq>monthly</changefreq>
+    </url><url>
+      <loc>https://andrew-stclair.com/</loc>
+      <lastmod>2026-08-10T06:01:58.351Z</lastmod>
+      <changefreq>monthly</changefreq>
+    </url><url>
+      <loc>https://andrew-stclair.com/llms.txt</loc>
+      <lastmod>2026-08-10T06:01:58.351Z</lastmod>
+      <changefreq>monthly</changefreq>
+    </url>
+</urlset>

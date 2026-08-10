@@ -1,0 +1,194 @@
+main {
+    display: block;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+h5 {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+p {
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+	font-weight: normal;
+	line-height: 1.3em;
+}
+
+main > p:first-of-type {
+	font-weight: bold;
+}
+
+nav ul li {
+	font-size: 1em;
+	width: fit-content;
+	padding-right: 5px;
+}
+
+nav ul li:not(:first-of-type):before {
+    content: '>';
+    margin: 0 0.2em;
+}
+
+ul li div p {
+	font-size: 0.8em;
+	font-weight: normal;
+}
+
+main > ul > li {
+	display: block;
+	float: left;
+    clear: left;
+	width: fit-content;
+	height: fit-content;
+	font-size: 1em;
+}
+
+main > ul > li::before {
+	content: '>';
+	margin-right: 0.5em;
+}
+
+div {
+	width: 100%;
+	border-radius: 12px;
+	background: rgba(192, 192, 192, 0);
+	padding: 12px;
+	margin: 0px;
+	margin-bottom: 5px;
+	height: fit-content;
+	display: block;
+}
+
+div:hover {
+	background: rgba(192, 192, 192, 0.6);
+}
+
+@media screen and (min-width: 1024px) {
+	main {
+		padding: 6.5em 8em 8em 8em;
+	}
+
+	footer {
+		height: 8em;
+	}
+
+	h1 {
+		font-size: 4em;
+	}
+
+    h5 {
+		padding-bottom: 4em;
+    }
+
+	ul li {
+		font-size: 1.65em;
+		width: 188px;
+	}
+}
+
+@media screen and (min-width: 701px) and (max-width: 1023px) {
+	main {
+		padding: 5em 6em 5em 6em;
+	}
+
+	footer {
+		height: 6em;
+	}
+
+	h1 {
+		font-size: 2.5em;
+	}
+
+    h5 {
+        padding-bottom: 2.5em;
+    }
+
+	ul li:first-child {
+		display: flex;
+	}
+}
+
+@media screen and (min-width: 567px) and (max-width: 700px) {
+	main {
+		padding: 3em 3.5em 3em 3.5em;
+	}
+
+	footer {
+		height: 3.5em;
+	}
+
+	h1 {
+		font-size: 2.1em;
+	}
+
+    h5 {
+        padding-bottom: 2.1em;
+    }
+
+	ul li {
+		width: 110px;
+	}
+
+	ul li:first-child {
+		display: flex;
+	}
+}
+
+@media screen and (min-width: 360px) and (max-width: 566px) {
+	main {
+		padding: 2.5em 3em 2.5em 3em;
+	}
+
+	footer {
+		height: 3em;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+
+    h5 {
+        padding-bottom: 2em;
+    }
+
+	ul li {
+		width: 100%;
+		margin-top: 15px;
+	}
+
+	ul li:first-child {
+		display: flex;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 359px) {
+	main {
+		padding: 2em 2.5em 2em 2.5em;
+	}
+
+	footer {
+		height: 2.5em;
+	}
+
+	h1 {
+		font-size: 1.7em;
+	}
+
+    h5 {
+        padding-bottom: 1.7em;
+    }
+
+	ul li {
+		width: 100%;
+		margin-top: 15px;
+	}
+
+	ul li:first-child {
+		display: flex;
+	}
+}

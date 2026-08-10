@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog | Andrew St Clair</title>
+  <subtitle>I am writing about my experiences as a cloud engineer.</subtitle>
+  <link href="https://andrew-stclair.com/feed.xml" rel="self"/>
+  <link href="https://andrew-stclair.com/"/>
+  <updated>2022-12-01T05:35:31Z</updated>
+  <id>https://andrew-stclair.com/</id>
+  <author>
+    <name>Andrew St Clair</name>
+    <email>andrew_stclair95@hotmail.com</email>
+  </author>
+  <entry>
+    <title>MongoDB&#39;s Challenge</title>
+    <link href="https://andrew-stclair.com/blog/2022/12/01/mongodbs-challenge/"/>
+    <updated>2022-12-01T05:35:31Z</updated>
+    <id>https://andrew-stclair.com/blog/2022/12/01/mongodbs-challenge/</id>
+    <content type="html">&lt;h2&gt;The Challenge&lt;/h2&gt;
+&lt;p&gt;At work today, MongoDB had a presentation on securing their product, Atlas.
+  At the end of this presentation they issued us a challenge, the presentation itself contains a &quot;payload&quot;.
+  The challenge for us is to extract this payload and retrieve the credentials within.
+  A note on these credentials, they are dummy credentials created for the challenge,
+  and do not actually work on anything.&lt;/p&gt;
+&lt;h2&gt;The Challenge Pt. 2&lt;/h2&gt;
+&lt;p&gt;This file was shared through Sharepoint.
+  An issue with using sharepoint is if you open the file using Powerpoint online and save a copy,
+  this is essentially the same as &quot;Save As&quot;, meaning the file is saved as it exists in powerpoint&#39;s memory.
+  This is an issue because the payload exists in a file that&#39;s not a part of the powerpoint file&#39;s spec,
+  and as such, it gets removed. Instead of opening and saving a copy, you need to download a copy.
+  This can be done by clicking the 3 dots next to the file in your search for file browser in sharepoint.&lt;/p&gt;
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;All office documents are actually zip files in disguise, so the first thing i tried, was to unzip the document.
+  This revealed a whole list of .xml files, my next challenge was to locate any files that seem out of place.
+  I spent about 30 minutes looking through the files and found a file called `_rels_ver.xml`.
+  This file did not look too out of place on it&#39;s own but the contents was a bit of a red flag for me.
+  There were two elements that looked to contain base64 encoded data, one was a short string, the other was a large blob.&lt;/p&gt;
+&lt;p&gt;Decoding the short string revealed a cheeky message, &quot;very close!&quot;, but decoding the long one revealed only garbled data.
+  The output from the big blob of base64 encoded text looked like binary data, but it did not start with &#39;ELF&#39;,
+  a key indicator that the data is an executable for linux. So i tried a few decompression methods instead as
+  They can look similar when represented by text. Turns out it was a gzip compressed string of text containing the payload we were looking for!
+  Just for clarification though, this payload was dummy data that was created for the purpose of this challenge, it&#39;s not real data.&lt;/p&gt;
+&lt;h2&gt;Wrap up&lt;/h2&gt;
+&lt;p&gt;It was a fun challenge. Thanks to &lt;a href=&quot;https://cyberchef.org/&quot; target=&quot;_blank&quot;&gt;CyberChef&lt;/a&gt; for the assistance decoding that large blob of text,
+  while it would not be imposible to decode in a terminal, it was quite simple to drag and drop various modules in and out to test.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Welcome to my blog</title>
+    <link href="https://andrew-stclair.com/blog/2022/11/17/welcome-to-my-blog/"/>
+    <updated>2022-11-17T07:37:30Z</updated>
+    <id>https://andrew-stclair.com/blog/2022/11/17/welcome-to-my-blog/</id>
+    <content type="html">&lt;h2&gt;Hi, I&#39;m Andrew St Clair&lt;/h2&gt;
+&lt;p&gt;I&#39;m a cloud engineer at &lt;a href=&quot;https://www.bendigobank.com.au/&quot;&gt;Bendigo Bank&lt;/a&gt;. I create clouds, and I am going to try to write about them.&lt;/p&gt;
+&lt;p&gt;Some of the things i do include:
+    &lt;/p&gt;&lt;ul&gt;
+        &lt;li&gt;Support app migration to both AWS and GCP&lt;/li&gt;
+        &lt;li&gt;Learn new technologies&lt;/li&gt;
+        &lt;li&gt;Attend conferences&lt;/li&gt;
+        &lt;li&gt;Meet people&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+</content>
+  </entry>
+</feed>

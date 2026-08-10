@@ -1,4 +1,27 @@
 Sitemap: https://andrew-stclair.com/sitemap.xml
 
+# LLM & AI Scraper Guidance: See https://andrew-stclair.com/llms.txt for LLM site information and usage guidelines
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 User-agent: *
 Allow: /
+
